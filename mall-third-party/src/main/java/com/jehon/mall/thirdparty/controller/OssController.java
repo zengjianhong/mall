@@ -1,6 +1,6 @@
 package com.jehon.mall.thirdparty.controller;
 
-import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.OSS;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
@@ -23,7 +23,7 @@ import java.util.Map;
 public class OssController {
 
     @Autowired
-    private OSSClient ossClient;
+    private OSS ossClient;
 
     @Value("${spring.cloud.alicloud.oss.endpoint}")
     String endpoint;
@@ -35,8 +35,7 @@ public class OssController {
     String accessId;
 
     @RequestMapping("/oss/policy")
-    public R policy(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    public R policy() {
         Map<String, String> respMap = new LinkedHashMap<>();
         // host的格式为 bucketname.endpoint
         String host = "https://" + bucket + "." + endpoint;
