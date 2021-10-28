@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    alicloud:
+      access-key: LTAI5tCj8W6eus9GtTXajiaT
+  AccessKey ID LTAI5tCj8W6eus9GtTXajiaT
+  AccessKey Secret KJ8oWkIy8ausWp5CTC8zYMgoSBKRFm
+      secret-key: KJ8oWkIy8ausWp5CTC8zYMgoSBKRFm
+      oss:
+        endpoint: oss-cn-shenzhen.aliyuncs.com
+        bucket: zengjianhong-bucket
