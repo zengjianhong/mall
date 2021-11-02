@@ -27,6 +27,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("product/brand")
 public class BrandController {
+
     @Autowired
     private BrandService brandService;
 

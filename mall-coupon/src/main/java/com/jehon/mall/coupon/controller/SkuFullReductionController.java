@@ -3,12 +3,9 @@ package com.jehon.mall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.jehon.common.to.SkuReductionTo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.jehon.mall.coupon.entity.SkuFullReductionEntity;
 import com.jehon.mall.coupon.service.SkuFullReductionService;
@@ -27,8 +24,17 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("coupon/skufullreduction")
 public class SkuFullReductionController {
+
     @Autowired
     private SkuFullReductionService skuFullReductionService;
+
+    @PostMapping("/saveinfo")
+    public R saveInfo(@RequestBody SkuReductionTo skuReductionTo){
+
+        skuFullReductionService.saveSkuReduction(skuReductionTo);
+
+        return R.ok();
+    }
 
     /**
      * 列表
@@ -46,7 +52,7 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		SkuFullReductionEntity skuFullReduction = skuFullReductionService.getById(id);
+        SkuFullReductionEntity skuFullReduction = skuFullReductionService.getById(id);
 
         return R.ok().put("skuFullReduction", skuFullReduction);
     }
@@ -56,7 +62,7 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody SkuFullReductionEntity skuFullReduction){
-		skuFullReductionService.save(skuFullReduction);
+        skuFullReductionService.save(skuFullReduction);
 
         return R.ok();
     }
@@ -66,7 +72,7 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody SkuFullReductionEntity skuFullReduction){
-		skuFullReductionService.updateById(skuFullReduction);
+        skuFullReductionService.updateById(skuFullReduction);
 
         return R.ok();
     }
@@ -76,9 +82,8 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		skuFullReductionService.removeByIds(Arrays.asList(ids));
+        skuFullReductionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

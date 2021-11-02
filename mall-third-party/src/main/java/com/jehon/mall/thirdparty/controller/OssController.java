@@ -22,7 +22,7 @@ import java.util.Map;
 @RestController
 public class OssController {
 
-    @Autowired
+    /*@Autowired
     private OSS ossClient;
 
     @Value("${spring.cloud.alicloud.oss.endpoint}")
@@ -69,5 +69,5 @@ public class OssController {
             ossClient.shutdown();
         }
         return R.ok().put("data", respMap);
-    }
+    }*/
 }
