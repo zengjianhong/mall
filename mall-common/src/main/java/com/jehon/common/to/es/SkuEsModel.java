@@ -1,4 +1,4 @@
-package com.jehon.common.es;
+package com.jehon.common.to.es;
 
 import lombok.Data;
 

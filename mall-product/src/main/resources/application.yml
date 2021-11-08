@@ -8,14 +8,14 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/mall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.82.2:3306/mall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: mall-product
     cloud:
       nacos:
         discovery:
-          server-addr: localhost:8848
+          server-addr: 192.168.82.2:8848
 
 #开启feign对sentinel的支持
 feign:
@@ -42,7 +42,7 @@ mybatis-plus:
 
 logging:
   level:
-    com.xunqi.gulimall: error
+    com.jehon.mall: error
 
 
 #暴露所有端点

@@ -2,7 +2,7 @@ package com.jehon.mall.product.service.impl;
 
 import com.alibaba.fastjson.TypeReference;
 import com.jehon.common.constant.ProductConstant;
-import com.jehon.common.es.SkuEsModel;
+import com.jehon.common.to.es.SkuEsModel;
 import com.jehon.common.to.SkuHasStockVo;
 import com.jehon.common.to.SkuReductionTo;
 import com.jehon.common.to.SpuBoundTo;
@@ -320,7 +320,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
             return esModel;
         }).collect(Collectors.toList());
 
-        //TODO 5、将数据发给es进行保存：gulimall-search
+        //TODO 5、将数据发给es进行保存： mall-search
         R r = searchFeignService.productStatusUp(collect);
 
         if (r.getCode() == 0) {

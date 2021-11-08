@@ -13,11 +13,11 @@ spring:
             - Query=url,qq
 
         - id: product_route
-            uri: lb://mall-product
-            predicates:
-              - Path=/api/product/**
-            filters:
-              - RewritePath=/api/(?<segment>.*),/$\{segment}
+          uri: lb://mall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
 
         - id: third_party_route
           uri: lb://mall-third-party
@@ -27,11 +27,11 @@ spring:
             - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
 
         - id: third_party_route
-            uri: lb://mall-ware
-            predicates:
-              - Path=/api/ware/**
-            filters:
-              - RewritePath=/api/(?<segment>.*),/$\{segment}
+          uri: lb://mall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
 
         - id: admin_route
           uri: lb://renren-fast
