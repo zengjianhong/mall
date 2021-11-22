@@ -1,6 +1,8 @@
 package com.jehon.common.exception;
 
 /**
+ * @Description: 错误状态码枚举
+ *
  * @author jehon
  *
  * @email 771970504@qq.com

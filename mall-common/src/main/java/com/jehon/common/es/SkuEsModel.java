@@ -1,16 +1,10 @@
-package com.jehon.common.to.es;
+package com.jehon.common.es;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * @author jehon
- *
- * @email 771970504@qq.com
- * @date 2021-10-26 16:39:35
- */
 @Data
 public class SkuEsModel {
 
@@ -50,6 +44,5 @@ public class SkuEsModel {
         private String attrName;
 
         private String attrValue;
-
     }
 }

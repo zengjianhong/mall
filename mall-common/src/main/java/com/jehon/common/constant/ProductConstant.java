@@ -1,5 +1,8 @@
 package com.jehon.common.constant;
 
+/**
+ * 商品常量属性
+ */
 public class ProductConstant {
 
     public enum AttrEnum {
@@ -24,7 +27,6 @@ public class ProductConstant {
         }
 
     }
-
 
     public enum ProductStatusEnum {
         NEW_SPU(0,"新建"),
