@@ -1,5 +1,11 @@
 package com.jehon.common.vo;
 
+import lombok.Data;
+import lombok.ToString;
+
+import java.io.Serializable;
+import java.util.Date;
+
 @ToString
 @Data
 public class MemberResponseVo implements Serializable {
