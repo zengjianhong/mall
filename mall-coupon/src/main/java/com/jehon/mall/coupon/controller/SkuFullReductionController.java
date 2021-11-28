@@ -46,7 +46,6 @@ public class SkuFullReductionController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */

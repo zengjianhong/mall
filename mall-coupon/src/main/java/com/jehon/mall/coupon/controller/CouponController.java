@@ -26,31 +26,13 @@ import com.jehon.common.utils.R;
  * @email 771970504@qq.com
  * @date 2021-10-26 23:07:57
  */
-@RefreshScope
+// @RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
 
     @Autowired
     private CouponService couponService;
-
-    @Value("${coupon.user.name}")
-    private String name;
-
-    @Value("${coupon.user.age}")
-    private Integer age;
-
-    @RequestMapping("/test")
-    public R test() {
-        return R.ok().put("name", name).put("age", age);
-    }
-
-    @RequestMapping("/member/list")
-    public R memberCoupons() {
-        CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减10");
-        return R.ok().put("coupons", Arrays.asList(couponEntity));
-    }
 
     /**
      * 列表
@@ -62,13 +44,12 @@ public class CouponController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		CouponEntity coupon = couponService.getById(id);
+        CouponEntity coupon = couponService.getById(id);
 
         return R.ok().put("coupon", coupon);
     }
@@ -78,7 +59,7 @@ public class CouponController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody CouponEntity coupon){
-		couponService.save(coupon);
+        couponService.save(coupon);
 
         return R.ok();
     }
@@ -88,7 +69,7 @@ public class CouponController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody CouponEntity coupon){
-		couponService.updateById(coupon);
+        couponService.updateById(coupon);
 
         return R.ok();
     }
@@ -98,9 +79,8 @@ public class CouponController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		couponService.removeByIds(Arrays.asList(ids));
+        couponService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

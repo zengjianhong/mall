@@ -27,6 +27,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("coupon/homeadv")
 public class HomeAdvController {
+
     @Autowired
     private HomeAdvService homeAdvService;
 
@@ -40,13 +41,12 @@ public class HomeAdvController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		HomeAdvEntity homeAdv = homeAdvService.getById(id);
+        HomeAdvEntity homeAdv = homeAdvService.getById(id);
 
         return R.ok().put("homeAdv", homeAdv);
     }
@@ -56,7 +56,7 @@ public class HomeAdvController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody HomeAdvEntity homeAdv){
-		homeAdvService.save(homeAdv);
+        homeAdvService.save(homeAdv);
 
         return R.ok();
     }
@@ -66,7 +66,7 @@ public class HomeAdvController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody HomeAdvEntity homeAdv){
-		homeAdvService.updateById(homeAdv);
+        homeAdvService.updateById(homeAdv);
 
         return R.ok();
     }
@@ -76,9 +76,8 @@ public class HomeAdvController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		homeAdvService.removeByIds(Arrays.asList(ids));
+        homeAdvService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

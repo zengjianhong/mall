@@ -15,8 +15,6 @@ import com.jehon.mall.coupon.service.MemberPriceService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 商品会员价格
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("coupon/memberprice")
 public class MemberPriceController {
+
     @Autowired
     private MemberPriceService memberPriceService;
 
@@ -40,13 +39,12 @@ public class MemberPriceController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		MemberPriceEntity memberPrice = memberPriceService.getById(id);
+        MemberPriceEntity memberPrice = memberPriceService.getById(id);
 
         return R.ok().put("memberPrice", memberPrice);
     }
@@ -56,7 +54,7 @@ public class MemberPriceController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody MemberPriceEntity memberPrice){
-		memberPriceService.save(memberPrice);
+        memberPriceService.save(memberPrice);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class MemberPriceController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody MemberPriceEntity memberPrice){
-		memberPriceService.updateById(memberPrice);
+        memberPriceService.updateById(memberPrice);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class MemberPriceController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		memberPriceService.removeByIds(Arrays.asList(ids));
+        memberPriceService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

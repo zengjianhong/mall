@@ -27,6 +27,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("coupon/seckillskunotice")
 public class SeckillSkuNoticeController {
+
     @Autowired
     private SeckillSkuNoticeService seckillSkuNoticeService;
 
@@ -40,13 +41,12 @@ public class SeckillSkuNoticeController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		SeckillSkuNoticeEntity seckillSkuNotice = seckillSkuNoticeService.getById(id);
+        SeckillSkuNoticeEntity seckillSkuNotice = seckillSkuNoticeService.getById(id);
 
         return R.ok().put("seckillSkuNotice", seckillSkuNotice);
     }
@@ -56,7 +56,7 @@ public class SeckillSkuNoticeController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody SeckillSkuNoticeEntity seckillSkuNotice){
-		seckillSkuNoticeService.save(seckillSkuNotice);
+        seckillSkuNoticeService.save(seckillSkuNotice);
 
         return R.ok();
     }
@@ -66,7 +66,7 @@ public class SeckillSkuNoticeController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody SeckillSkuNoticeEntity seckillSkuNotice){
-		seckillSkuNoticeService.updateById(seckillSkuNotice);
+        seckillSkuNoticeService.updateById(seckillSkuNotice);
 
         return R.ok();
     }
@@ -76,9 +76,8 @@ public class SeckillSkuNoticeController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		seckillSkuNoticeService.removeByIds(Arrays.asList(ids));
+        seckillSkuNoticeService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

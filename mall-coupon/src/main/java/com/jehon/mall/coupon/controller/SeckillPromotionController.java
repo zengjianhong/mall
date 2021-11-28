@@ -1,6 +1,7 @@
 package com.jehon.mall.coupon.controller;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("coupon/seckillpromotion")
 public class SeckillPromotionController {
+
     @Autowired
     private SeckillPromotionService seckillPromotionService;
 
@@ -40,13 +42,12 @@ public class SeckillPromotionController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		SeckillPromotionEntity seckillPromotion = seckillPromotionService.getById(id);
+        SeckillPromotionEntity seckillPromotion = seckillPromotionService.getById(id);
 
         return R.ok().put("seckillPromotion", seckillPromotion);
     }
@@ -56,7 +57,9 @@ public class SeckillPromotionController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody SeckillPromotionEntity seckillPromotion){
-		seckillPromotionService.save(seckillPromotion);
+        seckillPromotion.setUserId(1L);
+        seckillPromotion.setCreateTime(new Date());
+        seckillPromotionService.save(seckillPromotion);
 
         return R.ok();
     }
@@ -66,7 +69,7 @@ public class SeckillPromotionController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody SeckillPromotionEntity seckillPromotion){
-		seckillPromotionService.updateById(seckillPromotion);
+        seckillPromotionService.updateById(seckillPromotion);
 
         return R.ok();
     }
@@ -76,9 +79,8 @@ public class SeckillPromotionController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		seckillPromotionService.removeByIds(Arrays.asList(ids));
+        seckillPromotionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

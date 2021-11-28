@@ -15,8 +15,6 @@ import com.jehon.mall.coupon.service.HomeSubjectSpuService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 专题商品
  *
@@ -39,7 +37,6 @@ public class HomeSubjectSpuController {
 
         return R.ok().put("page", page);
     }
-
 
     /**
      * 信息
@@ -80,5 +77,4 @@ public class HomeSubjectSpuController {
 
         return R.ok();
     }
-
 }
