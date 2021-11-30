@@ -44,5 +44,4 @@ public class SpuImagesEntity implements Serializable {
 	 * 是否默认图
 	 */
 	private Integer defaultImg;
-
 }

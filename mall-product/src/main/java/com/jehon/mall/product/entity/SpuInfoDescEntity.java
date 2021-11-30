@@ -28,5 +28,4 @@ public class SpuInfoDescEntity implements Serializable {
 	 * 商品介绍
 	 */
 	private String decript;
-
 }

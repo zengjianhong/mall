@@ -43,7 +43,6 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
                 new Query<CategoryBrandRelationEntity>().getPage(params),
                 new QueryWrapper<CategoryBrandRelationEntity>()
         );
-
         return new PageUtils(page);
     }
 
@@ -80,6 +79,7 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
 
     @Override
     public List<BrandEntity> getBrandsByCatId(Long catId) {
+
         List<CategoryBrandRelationEntity> catelogId = relationDao.selectList(new QueryWrapper<CategoryBrandRelationEntity>().eq("catelog_id", catId));
 
         List<BrandEntity> collect = catelogId.stream().map(item -> {
@@ -91,5 +91,4 @@ public class CategoryBrandRelationServiceImpl extends ServiceImpl<CategoryBrandR
 
         return collect;
     }
-
 }

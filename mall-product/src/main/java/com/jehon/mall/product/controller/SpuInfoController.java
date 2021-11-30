@@ -12,8 +12,6 @@ import com.jehon.mall.product.service.SpuInfoService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * spu信息
  *

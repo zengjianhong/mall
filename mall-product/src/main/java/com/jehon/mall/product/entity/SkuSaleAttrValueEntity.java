@@ -44,5 +44,4 @@ public class SkuSaleAttrValueEntity implements Serializable {
 	 * 顺序
 	 */
 	private Integer attrSort;
-
 }

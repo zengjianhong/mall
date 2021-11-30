@@ -1,6 +1,6 @@
 package com.jehon.mall.product.feign;
 
-import com.jehon.common.to.es.SkuEsModel;
+import com.jehon.common.es.SkuEsModel;
 import com.jehon.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

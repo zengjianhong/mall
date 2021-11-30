@@ -15,8 +15,6 @@ import com.jehon.mall.product.service.SpuImagesService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * spu图片
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("product/spuimages")
 public class SpuImagesController {
+
     @Autowired
     private SpuImagesService spuImagesService;
 
@@ -40,13 +39,12 @@ public class SpuImagesController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		SpuImagesEntity spuImages = spuImagesService.getById(id);
+        SpuImagesEntity spuImages = spuImagesService.getById(id);
 
         return R.ok().put("spuImages", spuImages);
     }
@@ -56,7 +54,7 @@ public class SpuImagesController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody SpuImagesEntity spuImages){
-		spuImagesService.save(spuImages);
+        spuImagesService.save(spuImages);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class SpuImagesController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody SpuImagesEntity spuImages){
-		spuImagesService.updateById(spuImages);
+        spuImagesService.updateById(spuImages);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class SpuImagesController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		spuImagesService.removeByIds(Arrays.asList(ids));
+        spuImagesService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

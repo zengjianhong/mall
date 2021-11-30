@@ -22,7 +22,6 @@ public class SpuInfoDescServiceImpl extends ServiceImpl<SpuInfoDescDao, SpuInfoD
                 new Query<SpuInfoDescEntity>().getPage(params),
                 new QueryWrapper<SpuInfoDescEntity>()
         );
-
         return new PageUtils(page);
     }
 
@@ -30,6 +29,5 @@ public class SpuInfoDescServiceImpl extends ServiceImpl<SpuInfoDescDao, SpuInfoD
     public void saveSpuInfoDesc(SpuInfoDescEntity spuInfoDescEntity) {
 
         this.baseMapper.insert(spuInfoDescEntity);
-
     }
 }

@@ -13,8 +13,6 @@ import com.jehon.mall.product.service.CategoryService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 商品三级分类
  *
@@ -34,12 +32,10 @@ public class CategoryController {
      */
     @RequestMapping("/list/tree")
     public R list(){
-
         List<CategoryEntity> entities = categoryService.listWithTree();
 
         return R.ok().put("data", entities);
     }
-
 
     /**
      * 信息

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @email 771970504@qq.com
  * @date 2021-10-26 16:39:35
  */
-@FeignClient(value = "gulimall-seckill",fallback = SeckillFeignServiceFallBack.class)
+@FeignClient(value = "mall-seckill",fallback = SeckillFeignServiceFallBack.class)
 public interface SeckillFeignService {
 
     /**

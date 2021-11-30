@@ -96,8 +96,6 @@ public class AttrGroupController {
         return R.ok().put("page",page);
     }
 
-
-
     /**
      * 列表
      */

@@ -84,5 +84,4 @@ public class SpuCommentEntity implements Serializable {
 	 * 评论类型[0 - 对商品的直接评论，1 - 对评论的回复]
 	 */
 	private Integer commentType;
-
 }

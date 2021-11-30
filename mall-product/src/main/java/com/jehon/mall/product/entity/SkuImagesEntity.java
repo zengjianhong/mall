@@ -40,5 +40,4 @@ public class SkuImagesEntity implements Serializable {
 	 * 默认图[0 - 不是默认图，1 - 是默认图]
 	 */
 	private Integer defaultImg;
-
 }

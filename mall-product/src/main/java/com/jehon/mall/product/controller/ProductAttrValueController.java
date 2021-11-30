@@ -15,8 +15,6 @@ import com.jehon.mall.product.service.ProductAttrValueService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * spu属性值
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("product/productattrvalue")
 public class ProductAttrValueController {
+
     @Autowired
     private ProductAttrValueService productAttrValueService;
 
@@ -46,7 +45,7 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
+        ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
 
         return R.ok().put("productAttrValue", productAttrValue);
     }
@@ -56,7 +55,7 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody ProductAttrValueEntity productAttrValue){
-		productAttrValueService.save(productAttrValue);
+        productAttrValueService.save(productAttrValue);
 
         return R.ok();
     }
@@ -66,7 +65,7 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody ProductAttrValueEntity productAttrValue){
-		productAttrValueService.updateById(productAttrValue);
+        productAttrValueService.updateById(productAttrValue);
 
         return R.ok();
     }
@@ -76,9 +75,8 @@ public class ProductAttrValueController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		productAttrValueService.removeByIds(Arrays.asList(ids));
+        productAttrValueService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

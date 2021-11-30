@@ -6,7 +6,6 @@ import com.jehon.common.exception.RRException;
 import com.jehon.mall.product.entity.CategoryBrandRelationEntity;
 import com.jehon.mall.product.service.CategoryBrandRelationService;
 import com.jehon.mall.product.vo.Catelog2Vo;
-import org.apache.commons.lang.StringUtils;
 import org.redisson.api.RLock;
 import org.redisson.api.RReadWriteLock;
 import org.redisson.api.RedissonClient;
@@ -32,6 +31,7 @@ import com.jehon.mall.product.dao.CategoryDao;
 import com.jehon.mall.product.entity.CategoryEntity;
 import com.jehon.mall.product.service.CategoryService;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 
@@ -283,7 +283,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         //JSON跨语言。跨平台兼容。
         ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
         String catalogJson = ops.get("catalogJson");
-        if (StringUtils.isEmpty(catalogJson)) {
+        if (org.springframework.util.StringUtils.isEmpty(catalogJson)) {
             System.out.println("缓存不命中...查询数据库...");
             //2、缓存中没有数据，查询数据库
             Map<String, List<Catelog2Vo>> catalogJsonFromDb = getCatalogJsonFromDbWithRedissonLock();
@@ -346,7 +346,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
         //1、占分布式锁。去redis占坑      设置过期时间必须和加锁是同步的，保证原子性（避免死锁）
         String uuid = UUID.randomUUID().toString();
-        Boolean lock = stringRedisTemplate.opsForValue().setIfAbsent("lock", uuid,300, TimeUnit.SECONDS);
+        Boolean lock = stringRedisTemplate.opsForValue().setIfAbsent("lock", uuid,300,TimeUnit.SECONDS);
         if (lock) {
             System.out.println("获取分布式锁成功...");
             Map<String, List<Catelog2Vo>> dataFromDb = null;

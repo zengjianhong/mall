@@ -66,5 +66,4 @@ public class ProductAttrValueServiceImpl extends ServiceImpl<ProductAttrValueDao
         //批量新增
         this.saveBatch(collect);
     }
-
 }

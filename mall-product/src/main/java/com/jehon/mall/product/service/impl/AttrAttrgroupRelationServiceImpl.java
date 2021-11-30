@@ -44,6 +44,7 @@ public class AttrAttrgroupRelationServiceImpl extends ServiceImpl<AttrAttrgroupR
             BeanUtils.copyProperties(item, relationEntity);
             return relationEntity;
         }).collect(Collectors.toList());
+
         this.saveBatch(collect);
     }
 }

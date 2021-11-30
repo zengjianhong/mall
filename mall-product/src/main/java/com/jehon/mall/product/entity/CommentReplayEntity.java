@@ -32,5 +32,4 @@ public class CommentReplayEntity implements Serializable {
 	 * 回复id
 	 */
 	private Long replyId;
-
 }

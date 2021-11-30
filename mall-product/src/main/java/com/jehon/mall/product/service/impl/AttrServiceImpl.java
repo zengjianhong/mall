@@ -28,7 +28,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
-
 @Service("attrService")
 public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements AttrService {
 
@@ -50,7 +49,6 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
                 new Query<AttrEntity>().getPage(params),
                 new QueryWrapper<AttrEntity>()
         );
-
         return new PageUtils(page);
     }
 
@@ -70,7 +68,6 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
             relationEntity.setAttrId(attrEntity.getAttrId());
             relationDao.insert(relationEntity);
         }
-
     }
 
     @Override
@@ -126,7 +123,6 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
 
         pageUtils.setList(respVos);
         return pageUtils;
-
     }
 
     @Override
@@ -299,5 +295,4 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
 
         return searchAttrIds;
     }
-
 }

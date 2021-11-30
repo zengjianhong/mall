@@ -15,8 +15,6 @@ import com.jehon.mall.product.service.SpuInfoDescService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * spu信息介绍
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("product/spuinfodesc")
 public class SpuInfoDescController {
+
     @Autowired
     private SpuInfoDescService spuInfoDescService;
 
@@ -40,13 +39,12 @@ public class SpuInfoDescController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{spuId}")
     public R info(@PathVariable("spuId") Long spuId){
-		SpuInfoDescEntity spuInfoDesc = spuInfoDescService.getById(spuId);
+        SpuInfoDescEntity spuInfoDesc = spuInfoDescService.getById(spuId);
 
         return R.ok().put("spuInfoDesc", spuInfoDesc);
     }
@@ -56,7 +54,7 @@ public class SpuInfoDescController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody SpuInfoDescEntity spuInfoDesc){
-		spuInfoDescService.save(spuInfoDesc);
+        spuInfoDescService.save(spuInfoDesc);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class SpuInfoDescController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody SpuInfoDescEntity spuInfoDesc){
-		spuInfoDescService.updateById(spuInfoDesc);
+        spuInfoDescService.updateById(spuInfoDesc);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class SpuInfoDescController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] spuIds){
-		spuInfoDescService.removeByIds(Arrays.asList(spuIds));
+        spuInfoDescService.removeByIds(Arrays.asList(spuIds));
 
         return R.ok();
     }
-
 }
