@@ -15,8 +15,6 @@ import com.jehon.mall.member.service.MemberStatisticsInfoService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 会员统计信息
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("member/memberstatisticsinfo")
 public class MemberStatisticsInfoController {
+
     @Autowired
     private MemberStatisticsInfoService memberStatisticsInfoService;
 
@@ -40,13 +39,12 @@ public class MemberStatisticsInfoController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		MemberStatisticsInfoEntity memberStatisticsInfo = memberStatisticsInfoService.getById(id);
+        MemberStatisticsInfoEntity memberStatisticsInfo = memberStatisticsInfoService.getById(id);
 
         return R.ok().put("memberStatisticsInfo", memberStatisticsInfo);
     }
@@ -56,7 +54,7 @@ public class MemberStatisticsInfoController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
-		memberStatisticsInfoService.save(memberStatisticsInfo);
+        memberStatisticsInfoService.save(memberStatisticsInfo);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class MemberStatisticsInfoController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
-		memberStatisticsInfoService.updateById(memberStatisticsInfo);
+        memberStatisticsInfoService.updateById(memberStatisticsInfo);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class MemberStatisticsInfoController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		memberStatisticsInfoService.removeByIds(Arrays.asList(ids));
+        memberStatisticsInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

@@ -15,8 +15,6 @@ import com.jehon.mall.member.service.MemberCollectSubjectService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 会员收藏的专题活动
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("member/membercollectsubject")
 public class MemberCollectSubjectController {
+
     @Autowired
     private MemberCollectSubjectService memberCollectSubjectService;
 
@@ -40,13 +39,12 @@ public class MemberCollectSubjectController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		MemberCollectSubjectEntity memberCollectSubject = memberCollectSubjectService.getById(id);
+        MemberCollectSubjectEntity memberCollectSubject = memberCollectSubjectService.getById(id);
 
         return R.ok().put("memberCollectSubject", memberCollectSubject);
     }
@@ -56,7 +54,7 @@ public class MemberCollectSubjectController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody MemberCollectSubjectEntity memberCollectSubject){
-		memberCollectSubjectService.save(memberCollectSubject);
+        memberCollectSubjectService.save(memberCollectSubject);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class MemberCollectSubjectController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody MemberCollectSubjectEntity memberCollectSubject){
-		memberCollectSubjectService.updateById(memberCollectSubject);
+        memberCollectSubjectService.updateById(memberCollectSubject);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class MemberCollectSubjectController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		memberCollectSubjectService.removeByIds(Arrays.asList(ids));
+        memberCollectSubjectService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

@@ -15,8 +15,6 @@ import com.jehon.mall.member.service.IntegrationChangeHistoryService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 积分变化历史记录
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("member/integrationchangehistory")
 public class IntegrationChangeHistoryController {
+
     @Autowired
     private IntegrationChangeHistoryService integrationChangeHistoryService;
 
@@ -40,13 +39,12 @@ public class IntegrationChangeHistoryController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		IntegrationChangeHistoryEntity integrationChangeHistory = integrationChangeHistoryService.getById(id);
+        IntegrationChangeHistoryEntity integrationChangeHistory = integrationChangeHistoryService.getById(id);
 
         return R.ok().put("integrationChangeHistory", integrationChangeHistory);
     }
@@ -56,7 +54,7 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory){
-		integrationChangeHistoryService.save(integrationChangeHistory);
+        integrationChangeHistoryService.save(integrationChangeHistory);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody IntegrationChangeHistoryEntity integrationChangeHistory){
-		integrationChangeHistoryService.updateById(integrationChangeHistory);
+        integrationChangeHistoryService.updateById(integrationChangeHistory);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class IntegrationChangeHistoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		integrationChangeHistoryService.removeByIds(Arrays.asList(ids));
+        integrationChangeHistoryService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

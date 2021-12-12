@@ -44,5 +44,4 @@ public class GrowthChangeHistoryEntity implements Serializable {
 	 * 积分来源[0-购物，1-管理员修改]
 	 */
 	private Integer sourceType;
-
 }

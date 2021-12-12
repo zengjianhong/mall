@@ -64,5 +64,4 @@ public class MemberReceiveAddressEntity implements Serializable {
 	 * 是否默认
 	 */
 	private Integer defaultStatus;
-
 }

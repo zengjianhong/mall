@@ -81,5 +81,4 @@ public class MemberStatisticsInfoEntity implements Serializable {
 	 * 邀请的朋友数量
 	 */
 	private Integer inviteFriendCount;
-
 }

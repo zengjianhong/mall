@@ -40,5 +40,4 @@ public class MemberCollectSubjectEntity implements Serializable {
 	 * 活动url
 	 */
 	private String subjectUrll;
-
 }

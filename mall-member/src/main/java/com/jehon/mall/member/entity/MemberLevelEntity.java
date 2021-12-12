@@ -61,5 +61,4 @@ public class MemberLevelEntity implements Serializable {
 	 * 备注
 	 */
 	private String note;
-
 }

@@ -15,8 +15,6 @@ import com.jehon.mall.member.service.GrowthChangeHistoryService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 成长值变化历史记录
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("member/growthchangehistory")
 public class GrowthChangeHistoryController {
+
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
 
@@ -40,14 +39,12 @@ public class GrowthChangeHistoryController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		GrowthChangeHistoryEntity growthChangeHistory = growthChangeHistoryService.getById(id);
-
+        GrowthChangeHistoryEntity growthChangeHistory = growthChangeHistoryService.getById(id);
         return R.ok().put("growthChangeHistory", growthChangeHistory);
     }
 
@@ -56,7 +53,7 @@ public class GrowthChangeHistoryController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody GrowthChangeHistoryEntity growthChangeHistory){
-		growthChangeHistoryService.save(growthChangeHistory);
+        growthChangeHistoryService.save(growthChangeHistory);
 
         return R.ok();
     }
@@ -66,7 +63,7 @@ public class GrowthChangeHistoryController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody GrowthChangeHistoryEntity growthChangeHistory){
-		growthChangeHistoryService.updateById(growthChangeHistory);
+        growthChangeHistoryService.updateById(growthChangeHistory);
 
         return R.ok();
     }
@@ -76,7 +73,7 @@ public class GrowthChangeHistoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		growthChangeHistoryService.removeByIds(Arrays.asList(ids));
+        growthChangeHistoryService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

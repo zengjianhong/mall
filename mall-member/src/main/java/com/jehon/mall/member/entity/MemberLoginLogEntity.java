@@ -44,5 +44,4 @@ public class MemberLoginLogEntity implements Serializable {
 	 * 登录类型[1-web，2-app]
 	 */
 	private Integer loginType;
-
 }
