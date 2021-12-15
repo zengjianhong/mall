@@ -48,5 +48,4 @@ public class OrderSettingEntity implements Serializable {
 	 * 会员等级【0-不限会员等级，全部通用；其他-对应的其他会员等级】
 	 */
 	private Integer memberLevel;
-
 }

@@ -65,5 +65,4 @@ public class PaymentInfoEntity implements Serializable {
 	 * 回调时间
 	 */
 	private Date callbackTime;
-
 }

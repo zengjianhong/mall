@@ -40,5 +40,4 @@ public class OrderReturnReasonEntity implements Serializable {
 	 * create_time
 	 */
 	private Date createTime;
-
 }

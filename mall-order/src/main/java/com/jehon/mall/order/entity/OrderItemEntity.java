@@ -101,5 +101,4 @@ public class OrderItemEntity implements Serializable {
 	 * 赠送成长值
 	 */
 	private Integer giftGrowth;
-
 }

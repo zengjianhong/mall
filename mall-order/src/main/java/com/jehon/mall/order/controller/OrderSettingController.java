@@ -15,8 +15,6 @@ import com.jehon.mall.order.service.OrderSettingService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 订单配置信息
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("order/ordersetting")
 public class OrderSettingController {
+
     @Autowired
     private OrderSettingService orderSettingService;
 
@@ -40,13 +39,12 @@ public class OrderSettingController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		OrderSettingEntity orderSetting = orderSettingService.getById(id);
+        OrderSettingEntity orderSetting = orderSettingService.getById(id);
 
         return R.ok().put("orderSetting", orderSetting);
     }
@@ -56,7 +54,7 @@ public class OrderSettingController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody OrderSettingEntity orderSetting){
-		orderSettingService.save(orderSetting);
+        orderSettingService.save(orderSetting);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class OrderSettingController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody OrderSettingEntity orderSetting){
-		orderSettingService.updateById(orderSetting);
+        orderSettingService.updateById(orderSetting);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class OrderSettingController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		orderSettingService.removeByIds(Arrays.asList(ids));
+        orderSettingService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

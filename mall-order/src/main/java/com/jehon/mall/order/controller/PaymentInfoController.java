@@ -15,8 +15,6 @@ import com.jehon.mall.order.service.PaymentInfoService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 支付信息表
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("order/paymentinfo")
 public class PaymentInfoController {
+
     @Autowired
     private PaymentInfoService paymentInfoService;
 
@@ -40,13 +39,12 @@ public class PaymentInfoController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		PaymentInfoEntity paymentInfo = paymentInfoService.getById(id);
+        PaymentInfoEntity paymentInfo = paymentInfoService.getById(id);
 
         return R.ok().put("paymentInfo", paymentInfo);
     }
@@ -56,7 +54,7 @@ public class PaymentInfoController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody PaymentInfoEntity paymentInfo){
-		paymentInfoService.save(paymentInfo);
+        paymentInfoService.save(paymentInfo);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class PaymentInfoController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody PaymentInfoEntity paymentInfo){
-		paymentInfoService.updateById(paymentInfo);
+        paymentInfoService.updateById(paymentInfo);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class PaymentInfoController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		paymentInfoService.removeByIds(Arrays.asList(ids));
+        paymentInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

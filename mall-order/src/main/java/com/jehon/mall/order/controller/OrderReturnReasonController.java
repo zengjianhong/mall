@@ -15,8 +15,6 @@ import com.jehon.mall.order.service.OrderReturnReasonService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 退货原因
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("order/orderreturnreason")
 public class OrderReturnReasonController {
+
     @Autowired
     private OrderReturnReasonService orderReturnReasonService;
 
@@ -40,13 +39,12 @@ public class OrderReturnReasonController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		OrderReturnReasonEntity orderReturnReason = orderReturnReasonService.getById(id);
+        OrderReturnReasonEntity orderReturnReason = orderReturnReasonService.getById(id);
 
         return R.ok().put("orderReturnReason", orderReturnReason);
     }
@@ -56,7 +54,7 @@ public class OrderReturnReasonController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody OrderReturnReasonEntity orderReturnReason){
-		orderReturnReasonService.save(orderReturnReason);
+        orderReturnReasonService.save(orderReturnReason);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class OrderReturnReasonController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody OrderReturnReasonEntity orderReturnReason){
-		orderReturnReasonService.updateById(orderReturnReason);
+        orderReturnReasonService.updateById(orderReturnReason);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class OrderReturnReasonController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		orderReturnReasonService.removeByIds(Arrays.asList(ids));
+        orderReturnReasonService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

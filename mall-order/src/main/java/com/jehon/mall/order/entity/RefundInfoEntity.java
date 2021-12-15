@@ -46,8 +46,7 @@ public class RefundInfoEntity implements Serializable {
 	 */
 	private Integer refundChannel;
 	/**
-	 * 
+	 *
 	 */
 	private String refundContent;
-
 }

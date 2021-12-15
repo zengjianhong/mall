@@ -15,8 +15,6 @@ import com.jehon.mall.order.service.OrderItemService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 订单项信息
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("order/orderitem")
 public class OrderItemController {
+
     @Autowired
     private OrderItemService orderItemService;
 
@@ -40,13 +39,12 @@ public class OrderItemController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		OrderItemEntity orderItem = orderItemService.getById(id);
+        OrderItemEntity orderItem = orderItemService.getById(id);
 
         return R.ok().put("orderItem", orderItem);
     }
@@ -56,7 +54,7 @@ public class OrderItemController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody OrderItemEntity orderItem){
-		orderItemService.save(orderItem);
+        orderItemService.save(orderItem);
 
         return R.ok();
     }
@@ -66,7 +64,7 @@ public class OrderItemController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody OrderItemEntity orderItem){
-		orderItemService.updateById(orderItem);
+        orderItemService.updateById(orderItem);
 
         return R.ok();
     }
@@ -76,9 +74,8 @@ public class OrderItemController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		orderItemService.removeByIds(Arrays.asList(ids));
+        orderItemService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

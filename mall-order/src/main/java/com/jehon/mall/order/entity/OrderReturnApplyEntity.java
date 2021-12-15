@@ -133,5 +133,4 @@ public class OrderReturnApplyEntity implements Serializable {
 	 * 公司收货地址
 	 */
 	private String companyAddress;
-
 }
