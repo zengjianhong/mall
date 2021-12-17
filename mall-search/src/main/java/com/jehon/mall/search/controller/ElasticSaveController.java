@@ -1,7 +1,7 @@
 package com.jehon.mall.search.controller;
 
+import com.jehon.common.es.SkuEsModel;
 import com.jehon.common.exception.BizCodeEnum;
-import com.jehon.common.to.es.SkuEsModel;
 import com.jehon.common.utils.R;
 import com.jehon.mall.search.service.ProductSaveService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,6 @@ public class ElasticSaveController {
 
     @Autowired
     private ProductSaveService productSaveService;
-
 
     /**
      * 上架商品
@@ -44,8 +43,5 @@ public class ElasticSaveController {
         }else {
             return R.ok();
         }
-
     }
-
-
 }

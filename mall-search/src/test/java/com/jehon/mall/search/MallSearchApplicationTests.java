@@ -24,7 +24,7 @@ import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilde
 import org.elasticsearch.search.aggregations.metrics.Avg;
 import org.elasticsearch.search.aggregations.metrics.AvgAggregationBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -60,7 +60,7 @@ class MallSearchApplicationTests {
      *
      * @throws IOException
      */
-    @Test
+    @org.junit.Test
     public void searchData() throws IOException {
         //1. 创建检索请求
         SearchRequest searchRequest = new SearchRequest();
@@ -115,11 +115,10 @@ class MallSearchApplicationTests {
         System.out.println("平均薪资：" + balanceAvg1.getValue());
     }
 
-
     /**
      * @throws IOException
      */
-    @Test
+    @org.junit.Test
     public void searchState() throws IOException {
         //1. 创建检索请求
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
@@ -138,14 +137,13 @@ class MallSearchApplicationTests {
         //2. 执行检索
         SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
         System.out.println(searchResponse);
-
     }
 
     /**
      * 测试ES数据
      * 更新也可以
      */
-    @Test
+    @org.junit.Test
     public void indexData() throws IOException {
 
         IndexRequest indexRequest = new IndexRequest("users");
@@ -166,6 +164,7 @@ class MallSearchApplicationTests {
 
         //提取有用的响应数据
         System.out.println(index);
+
     }
 
     @Getter
@@ -178,7 +177,6 @@ class MallSearchApplicationTests {
 
     @Test
     public void contextLoads() {
-
         System.out.println(client);
     }
 }

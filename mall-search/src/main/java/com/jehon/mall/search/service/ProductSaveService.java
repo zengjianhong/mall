@@ -1,6 +1,6 @@
 package com.jehon.mall.search.service;
 
-import com.jehon.common.to.es.SkuEsModel;
+import com.jehon.common.es.SkuEsModel;
 
 import java.io.IOException;
 import java.util.List;

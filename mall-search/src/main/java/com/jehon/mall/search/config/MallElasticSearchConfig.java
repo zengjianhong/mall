@@ -11,20 +11,27 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MallElasticSearchConfig {
 
+    // @Bean
+    // public RestHighLevelClient esRestClient(){
+    //     RestHighLevelClient client = new RestHighLevelClient(
+    //             RestClient.builder(new HttpHost("192.168.137.14", 9200, "http")));
+    //     return  client;
+    // }
+
     public static final RequestOptions COMMON_OPTIONS;
     static {
         RequestOptions.Builder builder = RequestOptions.DEFAULT.toBuilder();
-//        builder.addHeader("Authorization", "Bearer " + TOKEN);
-//        builder.setHttpAsyncResponseConsumerFactory(
-//                new HttpAsyncResponseConsumerFactory
-//                        .HeapBufferedResponseConsumerFactory(30 * 1024 * 1024 * 1024));
+        // builder.addHeader("Authorization", "Bearer " + TOKEN);
+        // builder.setHttpAsyncResponseConsumerFactory(
+        //         new HttpAsyncResponseConsumerFactory
+        //                 .HeapBufferedResponseConsumerFactory(30 * 1024 * 1024 * 1024));
         COMMON_OPTIONS = builder.build();
     }
 
     @Bean
-    public RestHighLevelClient restHighLevelClient() {
-        return new RestHighLevelClient(
-                RestClient.builder(
-                        new HttpHost("192.168.82.2", 9200, "http")));
+    public RestHighLevelClient esRestClient(){
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("192.168.82.2", 9200, "http")));
+        return  client;
     }
 }

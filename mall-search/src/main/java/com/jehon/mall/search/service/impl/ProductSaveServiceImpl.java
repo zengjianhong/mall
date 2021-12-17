@@ -1,7 +1,7 @@
 package com.jehon.mall.search.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.jehon.common.to.es.SkuEsModel;
+import com.jehon.common.es.SkuEsModel;
 import com.jehon.mall.search.config.MallElasticSearchConfig;
 import com.jehon.mall.search.constant.EsConstant;
 import com.jehon.mall.search.service.ProductSaveService;
