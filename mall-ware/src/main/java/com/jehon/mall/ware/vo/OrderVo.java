@@ -5,12 +5,6 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * @author jehon
- *
- * @email 771970504@qq.com
- * @date 2021-10-26 23:20:04
- */
 @Data
 public class OrderVo {
 
@@ -179,5 +173,4 @@ public class OrderVo {
      * 修改时间
      */
     private Date modifyTime;
-
 }

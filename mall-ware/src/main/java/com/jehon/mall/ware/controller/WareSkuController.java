@@ -65,7 +65,6 @@ public class WareSkuController {
         List<SkuHasStockVo> vos = wareSkuService.getSkuHasStock(skuIds);
 
         return R.ok().setData(vos);
-
     }
 
     /**
@@ -77,7 +76,6 @@ public class WareSkuController {
 
         return R.ok().put("page", page);
     }
-
 
     /**
      * 信息

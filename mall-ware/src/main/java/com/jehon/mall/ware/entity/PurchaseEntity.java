@@ -61,5 +61,4 @@ public class PurchaseEntity implements Serializable {
 	 * 
 	 */
 	private Date updateTime;
-
 }

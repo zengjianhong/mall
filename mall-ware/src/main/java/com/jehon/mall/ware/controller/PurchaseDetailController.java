@@ -15,8 +15,6 @@ import com.jehon.mall.ware.service.PurchaseDetailService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("ware/purchasedetail")
 public class PurchaseDetailController {
+
     @Autowired
     private PurchaseDetailService purchaseDetailService;
 
@@ -40,13 +39,12 @@ public class PurchaseDetailController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		PurchaseDetailEntity purchaseDetail = purchaseDetailService.getById(id);
+        PurchaseDetailEntity purchaseDetail = purchaseDetailService.getById(id);
 
         return R.ok().put("purchaseDetail", purchaseDetail);
     }
@@ -56,7 +54,8 @@ public class PurchaseDetailController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody PurchaseDetailEntity purchaseDetail){
-		purchaseDetailService.save(purchaseDetail);
+        purchaseDetail.setStatus(0);
+        purchaseDetailService.save(purchaseDetail);
 
         return R.ok();
     }
@@ -66,7 +65,7 @@ public class PurchaseDetailController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody PurchaseDetailEntity purchaseDetail){
-		purchaseDetailService.updateById(purchaseDetail);
+        purchaseDetailService.updateById(purchaseDetail);
 
         return R.ok();
     }
@@ -76,9 +75,8 @@ public class PurchaseDetailController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		purchaseDetailService.removeByIds(Arrays.asList(ids));
+        purchaseDetailService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

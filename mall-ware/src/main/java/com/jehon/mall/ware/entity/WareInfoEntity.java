@@ -36,5 +36,4 @@ public class WareInfoEntity implements Serializable {
 	 * 区域编码
 	 */
 	private String areacode;
-
 }

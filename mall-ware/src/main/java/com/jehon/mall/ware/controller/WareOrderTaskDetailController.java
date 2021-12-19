@@ -15,8 +15,6 @@ import com.jehon.mall.ware.service.WareOrderTaskDetailService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
 
-
-
 /**
  * 库存工作单
  *
@@ -27,6 +25,7 @@ import com.jehon.common.utils.R;
 @RestController
 @RequestMapping("ware/wareordertaskdetail")
 public class WareOrderTaskDetailController {
+
     @Autowired
     private WareOrderTaskDetailService wareOrderTaskDetailService;
 
@@ -46,7 +45,7 @@ public class WareOrderTaskDetailController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		WareOrderTaskDetailEntity wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
+        WareOrderTaskDetailEntity wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
 
         return R.ok().put("wareOrderTaskDetail", wareOrderTaskDetail);
     }
@@ -56,7 +55,7 @@ public class WareOrderTaskDetailController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody WareOrderTaskDetailEntity wareOrderTaskDetail){
-		wareOrderTaskDetailService.save(wareOrderTaskDetail);
+        wareOrderTaskDetailService.save(wareOrderTaskDetail);
 
         return R.ok();
     }
@@ -66,7 +65,7 @@ public class WareOrderTaskDetailController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody WareOrderTaskDetailEntity wareOrderTaskDetail){
-		wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
+        wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
 
         return R.ok();
     }
@@ -76,9 +75,8 @@ public class WareOrderTaskDetailController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
+        wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

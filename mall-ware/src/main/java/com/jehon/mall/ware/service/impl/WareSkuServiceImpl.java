@@ -40,7 +40,6 @@ import com.jehon.mall.ware.entity.WareSkuEntity;
 import com.jehon.mall.ware.service.WareSkuService;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @RabbitListener(queues = "stock.release.stock.queue")
 @Service("wareSkuService")
 public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> implements WareSkuService {
@@ -291,6 +290,7 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
                     taskDetailEntity.getSkuNum(),
                     taskDetailEntity.getId());
         }
+
     }
 
     /**
@@ -319,5 +319,4 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
         private Integer num;
         private List<Long> wareId;
     }
-
 }

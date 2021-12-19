@@ -4,13 +4,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * @Description 锁定库存的vo
- * @author jehon
- *
- * @email 771970504@qq.com
- * @date 2021-10-26 23:20:04
- */
 @Data
 public class WareSkuLockVo {
 

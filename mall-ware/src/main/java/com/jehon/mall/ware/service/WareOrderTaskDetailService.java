@@ -3,6 +3,7 @@ package com.jehon.mall.ware.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.mall.ware.entity.WareOrderTaskDetailEntity;
+import com.jehon.mall.ware.entity.WareOrderTaskEntity;
 
 import java.util.Map;
 

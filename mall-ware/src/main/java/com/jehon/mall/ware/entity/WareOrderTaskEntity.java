@@ -76,5 +76,4 @@ public class WareOrderTaskEntity implements Serializable {
 	 * 工作单备注
 	 */
 	private String taskComment;
-
 }

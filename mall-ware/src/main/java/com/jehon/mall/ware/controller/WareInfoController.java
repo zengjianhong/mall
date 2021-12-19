@@ -3,19 +3,14 @@ package com.jehon.mall.ware.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.jehon.mall.ware.vo.FareVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.jehon.mall.ware.entity.WareInfoEntity;
 import com.jehon.mall.ware.service.WareInfoService;
 import com.jehon.common.utils.PageUtils;
 import com.jehon.common.utils.R;
-
-
 
 /**
  * 仓库信息
@@ -29,6 +24,16 @@ import com.jehon.common.utils.R;
 public class WareInfoController {
     @Autowired
     private WareInfoService wareInfoService;
+
+    /**
+     * 获取运费信息
+     * @return
+     */
+    @GetMapping(value = "/fare")
+    public R getFare(@RequestParam("addrId") Long addrId) {
+        FareVo fare = wareInfoService.getFare(addrId);
+        return R.ok().setData(fare);
+    }
 
     /**
      * 列表
@@ -46,7 +51,7 @@ public class WareInfoController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
-		WareInfoEntity wareInfo = wareInfoService.getById(id);
+        WareInfoEntity wareInfo = wareInfoService.getById(id);
 
         return R.ok().put("wareInfo", wareInfo);
     }
@@ -56,7 +61,7 @@ public class WareInfoController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody WareInfoEntity wareInfo){
-		wareInfoService.save(wareInfo);
+        wareInfoService.save(wareInfo);
 
         return R.ok();
     }
@@ -66,7 +71,7 @@ public class WareInfoController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody WareInfoEntity wareInfo){
-		wareInfoService.updateById(wareInfo);
+        wareInfoService.updateById(wareInfo);
 
         return R.ok();
     }
@@ -76,9 +81,8 @@ public class WareInfoController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
-		wareInfoService.removeByIds(Arrays.asList(ids));
+        wareInfoService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }
