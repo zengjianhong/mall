@@ -7,6 +7,9 @@ import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
+/**
+ * 解决跨域的配置
+ */
 @Configuration
 public class MallCorsConfiguration {
 
