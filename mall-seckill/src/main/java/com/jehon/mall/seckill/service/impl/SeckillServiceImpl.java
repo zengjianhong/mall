@@ -145,7 +145,7 @@ public class SeckillServiceImpl implements SeckillService {
 
                     //序列化json格式存入Redis中
                     String seckillValue = JSON.toJSONString(redisTo);
-                    operations.put(seckillSkuVo.getPromotionSessionId().toString() + "-" + seckillSkuVo.getSkuId().toString(), seckillValue);
+                    operations.put(redisKey, seckillValue);
 
                     //如果当前这个场次的商品库存信息已经上架就不需要上架
                     //5、使用库存作为分布式Redisson信号量（限流）

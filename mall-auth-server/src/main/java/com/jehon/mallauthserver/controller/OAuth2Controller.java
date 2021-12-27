@@ -34,10 +34,10 @@ public class OAuth2Controller {
     @GetMapping(value = "/oauth2.0/weibo/success")
     public String weibo(@RequestParam("code") String code, HttpSession session) throws Exception {
 
-        //原作者信息：2077705774、40af02bd1c7e435ba6a6e9cd3bf799fd,同时修改login.html中的client_id。
+        //同时修改login.html中的client_id。
         Map<String, String> map = new HashMap<>();
-        map.put("client_id","588997645");
-        map.put("client_secret","5d7746d10c4d926ed38692c8d17b7e31");
+        map.put("client_id","");
+        map.put("client_secret","");
         map.put("grant_type","authorization_code");
         map.put("redirect_uri","http://auth.mall.com/oauth2.0/weibo/success");
         map.put("code",code);
